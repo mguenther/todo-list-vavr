@@ -18,7 +18,7 @@
     <description>This application demonstrates a functional application design using VAVR all the way to the bottom.</description>
 
     <properties>
-        <java.version>13</java.version>
+        <java.version>11</java.version>
     </properties>
 
     <dependencies>
