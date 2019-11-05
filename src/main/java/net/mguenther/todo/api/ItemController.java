@@ -26,7 +26,7 @@ public class ItemController {
     @ApiResponses(value = {
             @ApiResponse(code = 201, message = "The todo list item has been successfully created.", response = ShowItemRepr.class),
             @ApiResponse(code = 400, message = "The data describing the new todo list item is invalid."),
-            @ApiResponse(code = 500, message = "An internal error occured while processing the create item request.")
+            @ApiResponse(code = 500, message = "An internal error occurred while processing the create item request.")
     })
     @PostMapping(path = "/items", consumes = MediaType.APPLICATION_JSON_VALUE)
     public ResponseEntity<?> createItem(@ApiParam(value = "CreateItem", required = true) @RequestBody @Valid final CreateItemRepr createItemRepr) {
@@ -40,7 +40,7 @@ public class ItemController {
     @ApiOperation(value = "Shows the todo list item with the given ID.")
     @ApiResponses(value = {
             @ApiResponse(code = 200, message = "The response contains a detailed representation of the todo list item with the given ID.", response = ShowItemRepr.class),
-            @ApiResponse(code = 500, message = "An internal error occured while retrieving the detailed representation of the requested todo list item.")
+            @ApiResponse(code = 500, message = "An internal error occurred while retrieving the detailed representation of the requested todo list item.")
     })
     @GetMapping(path = "/items/{itemId}", produces = MediaType.APPLICATION_JSON_VALUE)
     public ResponseEntity<?> showItem(@PathVariable("itemId") final String itemId) {
@@ -54,7 +54,7 @@ public class ItemController {
     @ApiOperation(value = "Closes the todo list item with the given (business) ID.")
     @ApiResponses(value = {
             @ApiResponse(code = 204, message = "The todo list item with the given ID has been successfully closed."),
-            @ApiResponse(code = 500, message = "An internal error occured while processing the close item request.")
+            @ApiResponse(code = 500, message = "An internal error occurred while processing the close item request.")
     })
     @DeleteMapping(path = "/items/{itemId}", produces = MediaType.APPLICATION_JSON_VALUE)
     public ResponseEntity<?> closeItem(@ApiParam(value = "itemId", required = true) @PathVariable("itemId") final String itemId) {
